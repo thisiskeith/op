@@ -2,7 +2,7 @@
 
 var oboe = require('oboe');
 
-export default function op(data) {
+function op(data) {
 
     if (typeof data !== "object") {
         throw new Error('data is undefined');
@@ -26,11 +26,11 @@ export default function op(data) {
         xhrObj.body = data.body;
     }
 
-    let promise = new Promise((resolve, reject) => {
+    let promise = new Promise(function (resolve, reject) {
 
         oboe(xhrObj)
-            .start(status) => statusCode = status)
-            .done((payload) => {
+            .start(function (status) { statusCode = status; })
+            .done(function (payload) {
 
                 if (data.callback) {
                     payload = data.callback(payload);
@@ -40,11 +40,11 @@ export default function op(data) {
 
                 resolve(payload);
             })
-            .fail((errorReport) => {
-                reject(errorReport);
-            });
+            .fail(function (errorReport) { reject(errorReport); });
     });
 
     return promise;
 }
+
+module.exports = op;
 
