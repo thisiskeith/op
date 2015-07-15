@@ -1,0 +1,23 @@
+{
+  "name": "oboe-p",
+  "version": "0.1.0",
+  "description": "Oboe.js XHR wrapper with ES6 promises",
+  "main": "op.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thisiskeith/op.git"
+  },
+  "author": "Keith Hansen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thisiskeith/op/issues"
+  },
+  "homepage": "https://github.com/thisiskeith/op",
+  "dependencies": {
+    "oboe": "^2.1.2"
+  },
+  "browserDependencies": {}
+}
