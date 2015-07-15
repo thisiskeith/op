@@ -8,7 +8,6 @@ function op(data) {
         throw new Error('data is undefined');
     }
 
-    let statusCode;
     let xhrObj = {
             url: data.url,
             method: data.method || 'GET',
@@ -29,14 +28,11 @@ function op(data) {
     let promise = new Promise(function (resolve, reject) {
 
         oboe(xhrObj)
-            .start(function (status) { statusCode = status; })
             .done(function (payload) {
 
                 if (data.callback) {
                     payload = data.callback(payload);
                 }
-
-                payload.statusCode = status;
 
                 resolve(payload);
             })
