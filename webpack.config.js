@@ -13,11 +13,14 @@ module.exports = {
             minimize: true,
             debug: false
         }),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoErrorsPlugin()
+        /*
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false }
         })
-    ],
+        */
+    ]
+    /*,
     module: {
         loaders: [
             {
@@ -32,4 +35,5 @@ module.exports = {
             }
         ]
     }
+    */
 }

@@ -2,13 +2,13 @@
 
 const oboe = require('oboe')
 
-function op(data) {
+function op (data) {
 
     if (typeof data !== "object") {
         throw new Error('data is undefined')
     }
 
-    const xhrObj = {
+    var xhrObj = {
         url: data.url,
         method: data.method || 'GET',
         cached: typeof data.cached !== 'undefined' ? data.cached : true,
@@ -25,7 +25,7 @@ function op(data) {
         xhrObj.body = data.body
     }
 
-    const promise = new Promise(function (resolve, reject) {
+    var promise = new Promise(function (resolve, reject) {
 
         oboe(xhrObj)
             .done(function (payload) {

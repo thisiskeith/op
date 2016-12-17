@@ -1,6 +1,6 @@
 {
   "name": "oboe-p",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Oboe.js XHR wrapper with ES6 promises",
   "main": "./lib/main.js",
   "scripts": {
